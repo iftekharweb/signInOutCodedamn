@@ -11,7 +11,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://inup.netlify.app/api/register`, {
+            const response = await fetch(`https://signinoutcodedamn.onrender.com/api/register`, {
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json'

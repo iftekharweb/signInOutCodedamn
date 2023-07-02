@@ -71,4 +71,4 @@ app.get('/api/profile', async (req,res) => {
 //     }
 // });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 6020);

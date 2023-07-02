@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './style.css';
-const BASEURL = import.meta.env.BASEURL;
-
-console.log(BASEURL);;
 
 const Register = () => {
     const navigate = useNavigate();
@@ -21,7 +18,8 @@ const Register = () => {
             const data = await response.json();
             if(data.user) {
                 localStorage.setItem('token', data.user);
-                window.location.href = '/profile';
+                //window.location.href = '/profile';
+                navigate('/profile');
             } else {
                 alert('Please Check Your Username or Password');
             }

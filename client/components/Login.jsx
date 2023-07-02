@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './style.css';
+const BASEURL = import.meta.env.BASEURL;
+
+console.log(BASEURL);;
 
 const Register = () => {
     const navigate = useNavigate();
@@ -9,7 +12,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:1234/api/login`, {
+            const response = await fetch(`https://signinoutcodedamn.onrender.com/api/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'

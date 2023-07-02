@@ -20,7 +20,7 @@ const Profile = () => {
     };
     
     async function populateProfile() {
-        const response = await fetch(`http://localhost:1234/api/profile`, {
+        const response = await fetch(`https://signinoutcodedamn.onrender.com/api/profile`, {
             headers: {
                 'x-access-token': localStorage.getItem('token')
             }

@@ -64,7 +64,7 @@ app.post('/api/profile', async (req,res) => {
     try {
         const decoded = jwt.verify(token,process.env.JWTPASS);
         const email = decoded.email;
-        const user = await User.updateOne({email:email});
+        const user = await User.updateOne({email:email},{email:email});
         res.json({status:'success', user:true});
     } catch (error) {
         res.json({status:'error', message:'Invadid Token'});

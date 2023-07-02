@@ -59,16 +59,16 @@ app.get('/api/profile', async (req,res) => {
     }
 });
 
-// app.post('/api/profile', async (req,res) => {
-//     const token = req.headers['x-access-token'];
-//     try {
-//         const decoded = jwt.verify(token,process.env.JWTPASS);
-//         const email = decoded.email;
-//         const user = await User.updateOne({email:email});
-//         res.json({status:'success', user:true});
-//     } catch (error) {
-//         res.json({status:'error', message:'Invadid Token'});
-//     }
-// });
+app.post('/api/profile', async (req,res) => {
+    const token = req.headers['x-access-token'];
+    try {
+        const decoded = jwt.verify(token,process.env.JWTPASS);
+        const email = decoded.email;
+        const user = await User.updateOne({email:email});
+        res.json({status:'success', user:true});
+    } catch (error) {
+        res.json({status:'error', message:'Invadid Token'});
+    }
+});
 
 app.listen(process.env.PORT || 6020);
